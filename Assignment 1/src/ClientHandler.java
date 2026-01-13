@@ -31,6 +31,8 @@ public class ClientHandler implements Runnable {
         }catch (IOException e) {
             System.out.println("Unable to close client socket and buffered reader.");
         }
+
+        System.out.println("Client disconnected.");
     }
 
     private void processCommand() throws IOException {
@@ -40,7 +42,7 @@ public class ClientHandler implements Runnable {
         serverCommand.execute(this.server, lineItems.subList(1, lineItems.size()));
     }
 
-    private void close() throws IOException {
+    public void close() throws IOException {
         this.clientSocket.close();
         this.bufferedReader.close();
     }

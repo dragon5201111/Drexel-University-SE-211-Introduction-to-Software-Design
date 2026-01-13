@@ -11,8 +11,8 @@ public class Client implements AutoCloseable {
     private final PrintWriter printWriter;
     private final BufferedReader bufferedReader;
 
-    public Client() throws IOException {
-        this(Client.DEFAULT_ADDRESS, Server.DEFAULT_PORT);
+    public Client(int port) throws IOException {
+        this(Client.DEFAULT_ADDRESS, port);
     }
 
     public Client(String address, int port) throws IOException {
@@ -30,7 +30,7 @@ public class Client implements AutoCloseable {
         }while (!line.equals(Client.CLIENT_QUIT));
     }
 
-    public void writeToServer(String message) throws IOException {
+    public void writeToServer(String message) {
         this.printWriter.println(message);
     }
 
@@ -41,7 +41,7 @@ public class Client implements AutoCloseable {
     }
 
     public static void main(String[] args) {
-        try (Client client = new Client()){
+        try (Client client = new Client(Util.getPortFromStdin())){
             System.out.println("Connecting to server.");
             client.start();
         }catch (Exception e){
