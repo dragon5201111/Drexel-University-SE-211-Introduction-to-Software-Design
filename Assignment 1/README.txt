@@ -1,5 +1,6 @@
 Before running the program:
 1.) Ensure JDK 24.0.1 or higher is installed. Check this with the command java -version
+2.) Extract Assignment 1 zip file.
 
 Notes:
 For the client and server programs, you will be prompted to enter a port number. Press enter to use the default port. If you choose
