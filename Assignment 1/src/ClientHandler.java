@@ -36,7 +36,7 @@ public class ClientHandler implements Runnable {
     private void processCommand() throws IOException {
         String line = this.bufferedReader.readLine();
         List<String> lineItems = List.of(line.split(" "));
-        ServerCommand serverCommand = ServerCommandFactory.getServerCommand(lineItems.getFirst());
+        ServerCommand serverCommand = ServerCommandFactory.getServerCommand(lineItems.get(0));
         serverCommand.execute(this.server, lineItems.subList(1, lineItems.size()));
     }
 
