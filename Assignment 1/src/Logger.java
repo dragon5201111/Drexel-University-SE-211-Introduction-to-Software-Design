@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Logger {
     public static final String DEFAULT_LOG_FILE = "log.txt";
@@ -57,14 +58,14 @@ public class Logger {
             return;
         }
 
-        System.out.println(lines.getLast());
+        System.out.println(lines.get(lines.size() - 1));
     }
 
     public synchronized void printMatchingLines(String targetLine) throws IOException {
         List<String> lines = Files.readAllLines(this.logFilePath)
                 .stream()
                 .filter(line -> line.contains(targetLine))
-                .toList();
+                .collect(Collectors.toList());
         for (String line : lines) {
             System.out.println(line);
         }

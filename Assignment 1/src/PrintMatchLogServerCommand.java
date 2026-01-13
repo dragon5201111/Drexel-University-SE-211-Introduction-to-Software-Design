@@ -4,7 +4,7 @@ public class PrintMatchLogServerCommand implements ServerCommand{
     @Override
     public void execute(Server server,  List<String> arguments) {
         try {
-            Logger.getInstance().printMatchingLines(arguments.getFirst());
+            Logger.getInstance().printMatchingLines(arguments.get(0));
         }catch (Exception e){
             System.out.println("Unable to print matching lines from log.");
         }
