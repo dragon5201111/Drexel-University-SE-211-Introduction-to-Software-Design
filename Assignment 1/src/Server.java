@@ -24,6 +24,7 @@ public class Server implements AutoCloseable {
             while (this.isAlive()) {
                 Socket clientSocket = this.serverSocket.accept();
                 ClientHandler handler = new ClientHandler(this, clientSocket);
+                System.out.println("New client connected from " + clientSocket.getInetAddress().getHostName());
                 this.clientHandlers.add(handler);
                 this.executor.execute(handler);
             }
