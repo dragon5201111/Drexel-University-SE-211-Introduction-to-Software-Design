@@ -1,6 +1,8 @@
+import java.util.List;
+
 public class QuitServerCommand implements ServerCommand{
     @Override
-    public void execute(Server server, Object arguments) {
+    public void execute(Server server, List<String> arguments) {
         try{
             server.shutdown();
         }catch(Exception e){

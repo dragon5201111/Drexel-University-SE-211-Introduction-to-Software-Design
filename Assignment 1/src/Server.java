@@ -24,11 +24,15 @@ public class Server implements AutoCloseable{
         this.executor = Executors.newCachedThreadPool();
     }
 
-    public void start() throws IOException {
+    public void start() {
         this.setAlive();
-        while (this.isAlive()) {
-            Socket clientSocket = this.serverSocket.accept();
-            this.executor.execute(new ClientHandler(clientSocket));
+        try{
+            while (this.isAlive()) {
+                Socket clientSocket = this.serverSocket.accept();
+                this.executor.execute(new ClientHandler(this, clientSocket));
+            }
+        }catch(IOException e){
+            System.out.println("Server has been shut down.");
         }
     }
 
@@ -46,6 +50,7 @@ public class Server implements AutoCloseable{
     public synchronized void shutdown() throws IOException {
         this.alive = false;
         this.serverSocket.close();
+        this.executor.shutdownNow();
     }
 
     public synchronized boolean isAlive(){
@@ -54,9 +59,9 @@ public class Server implements AutoCloseable{
 
     public static void main(String[] args) {
         try (Server server = new Server()){
+            System.out.println("Server has been started.");
             server.start();
         }catch (Exception e){
-            System.out.println("Error, server startup failed.");
             throw new RuntimeException(e);
         }
     }

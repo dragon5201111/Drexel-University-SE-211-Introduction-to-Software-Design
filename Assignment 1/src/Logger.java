@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
@@ -12,11 +13,20 @@ public class Logger {
 
     private final Path logFilePath;
 
-    private Logger() {
+    private Logger() throws IOException {
         this.logFilePath = Paths.get(Logger.DEFAULT_LOG_FILE);
+        this.initializeLogFile();
     }
 
-    public static synchronized Logger getInstance() {
+    private synchronized void initializeLogFile() throws IOException {
+        if (Files.exists(this.logFilePath)) {
+            return;
+        }
+
+        Files.createFile(this.logFilePath);
+    }
+
+    public static synchronized Logger getInstance() throws IOException {
         if (Logger.logger == null) {
             Logger.logger = new Logger();
         }

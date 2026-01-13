@@ -1,3 +1,5 @@
+import java.util.List;
+
 public interface ServerCommand {
-    void execute(Server server, Object arguments);
+    void execute(Server server, List<String> arguments);
 }
