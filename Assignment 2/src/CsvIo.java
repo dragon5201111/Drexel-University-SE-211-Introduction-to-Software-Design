@@ -1,16 +1,21 @@
-public class CsvIo {
+public abstract class CsvIo {
     static char DEFAULT_DELIMITER = ',';
-    static char DEFAULT_QUOTE = '"';
+    static char DEFAULT_QUOTE_CHAR = '"';
+    static char DEFAULT_ESCAPE_CHAR = '\0';
 
+    protected QuotingOption quoting;
     protected char delimiter;
-    protected char quote;
+    protected char quoteChar;
+    protected char escapeChar;
 
-    public CsvIo(char delimiter, char quote) {
+    public CsvIo(QuotingOption quoting, char delimiter, char quoteChar, char escapeChar) {
+        this.quoting = quoting;
         this.delimiter = delimiter;
-        this.quote = quote;
+        this.quoteChar = quoteChar;
+        this.escapeChar = escapeChar;
     }
 
     public CsvIo() {
-        this(DEFAULT_DELIMITER, DEFAULT_QUOTE);
+        this(QuotingOption.QUOTE_NONE, DEFAULT_DELIMITER, DEFAULT_QUOTE_CHAR, DEFAULT_ESCAPE_CHAR);
     }
 }
