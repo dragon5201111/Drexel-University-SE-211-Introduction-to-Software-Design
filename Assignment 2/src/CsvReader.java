@@ -8,6 +8,7 @@ import java.util.List;
  * QUOTE_ALL ->
  * QUOTE_MINIMAL ->
  * QUOTE_NONE -> If a field contains a quote character it will be included in the field
+ * Ignored:
  * QUOTE_NONEMPTY ->
  * QUOTE_NONNUMERIC ->
  * QUOTE_STRINGS ->
