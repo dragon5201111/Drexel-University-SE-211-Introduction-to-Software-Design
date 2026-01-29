@@ -2,7 +2,7 @@ public enum QuotingOption {
     QUOTE_ALL,
     QUOTE_MINIMAL,
     QUOTE_NONE,
-    QUOTE_NONNULL,
+    QUOTE_NONEMPTY,
     QUOTE_NONNUMERIC,
     QUOTE_STRINGS
 }
