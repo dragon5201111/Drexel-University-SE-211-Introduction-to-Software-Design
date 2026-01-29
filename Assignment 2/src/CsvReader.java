@@ -1,11 +1,13 @@
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Quoting Options Interpretation:
- * QUOTE_ALL ->
+ * QUOTE_ALL ->  Fields enclosed in quotes preserve any delimiters or quotes
  * QUOTE_MINIMAL ->
  * QUOTE_NONE -> If a field contains a quote character it will be included in the field
  * Ignored:
@@ -36,20 +38,25 @@ public class CsvReader extends CsvIo implements AutoCloseable {
 
 
     public List<String> readRecord() throws IOException {
-//        boolean inQuotes = false;
-//       String line = this.readLine();
-//
-//       StringBuilder currentField = new StringBuilder();
-//       List<String> fields = new ArrayList<>();
-//
-//       int lineLength = line.length();
-//       for (int i = 0; i < lineLength; i++) {
-//           char currentChar = line.charAt(i);
-//
-//       }
-//
-//       return fields;
-        throw new UnsupportedOperationException("Not implemented");
+        boolean inQuotes = false;
+        String line = this.readLine();
+
+        StringBuilder currentField = new StringBuilder();
+        List<String> fields = new ArrayList<>();
+
+        int lineLength = line.length();
+        for (int i = 0; i < lineLength; i++) {
+            char currentChar = line.charAt(i);
+
+            if (currentChar == this.delimiter) {
+                fields.add(currentField.toString());
+                currentField.setLength(0);
+            }else {
+                currentField.append(currentChar);
+            }
+        }
+        fields.add(currentField.toString());
+        return fields;
     }
 
     private String readLine() throws IOException {
@@ -60,5 +67,15 @@ public class CsvReader extends CsvIo implements AutoCloseable {
     @Override
     public void close() throws Exception {
         this.reader.close();
+    }
+
+    public static void main(String[] args) {
+        try (CsvReader csvReader = new CsvReader(new FileReader(".\\Assignment 2\\test.csv"))){
+            List<String> record = csvReader.readRecord();
+            System.out.println(record.toString() + record.size());
+            System.out.println(csvReader.readRecord());
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }
