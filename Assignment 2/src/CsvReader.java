@@ -1,10 +1,19 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.Iterator;
 import java.util.List;
 
-public class CsvReader extends CsvIo implements AutoCloseable, Iterator<List<String>> {
+/**
+ * Quoting Options Interpretation:
+ * QUOTE_ALL ->
+ * QUOTE_MINIMAL ->
+ * QUOTE_NONE -> If a field contains a quote character it will be included in the field
+ * QUOTE_NONEMPTY ->
+ * QUOTE_NONNUMERIC ->
+ * QUOTE_STRINGS ->
+ * */
+
+public class CsvReader extends CsvIo implements AutoCloseable {
     private boolean strict;
     private final BufferedReader reader;
 
@@ -24,26 +33,31 @@ public class CsvReader extends CsvIo implements AutoCloseable, Iterator<List<Str
         this.strict = strict;
     }
 
+
     public List<String> readRecord() throws IOException {
-        throw new UnsupportedOperationException("Not supported yet.");
+//        boolean inQuotes = false;
+//       String line = this.readLine();
+//
+//       StringBuilder currentField = new StringBuilder();
+//       List<String> fields = new ArrayList<>();
+//
+//       int lineLength = line.length();
+//       for (int i = 0; i < lineLength; i++) {
+//           char currentChar = line.charAt(i);
+//
+//       }
+//
+//       return fields;
+        throw new UnsupportedOperationException("Not implemented");
     }
 
-    public List<List<String>> readRecords() throws IOException {
-        throw new UnsupportedOperationException("Not supported yet.");
+    private String readLine() throws IOException {
+        String nextLine = this.reader.readLine();
+        return nextLine == null ? "" : nextLine;
     }
 
     @Override
     public void close() throws Exception {
         this.reader.close();
-    }
-
-    @Override
-    public boolean hasNext() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public List<String> next() {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
