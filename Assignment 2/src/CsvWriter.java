@@ -105,20 +105,4 @@ public class CsvWriter extends CsvIo implements AutoCloseable, Flushable {
     public void flush() throws IOException {
         this.writer.flush();
     }
-
-    public static void main(String[] args) throws IOException {
-        Writer writer = new BufferedWriter(new FileWriter(".\\Assignment 2\\test.csv", true));
-        try (CsvWriter csvWriter = new CsvWriter(writer)) {
-            List<List<String>> records = List.of(
-              List.of("foo:,", "::b,ar\"", "jar"),
-              List.of("1", "2", "4")
-            );
-            csvWriter.writeRecords(records);
-            csvWriter.setDelimiter(',');
-            csvWriter.setQuoteChar(',');
-            csvWriter.writeRecords(records);
-        }catch (Exception e){
-            System.out.println("Error " + e.getMessage());
-        }
-    }
 }
