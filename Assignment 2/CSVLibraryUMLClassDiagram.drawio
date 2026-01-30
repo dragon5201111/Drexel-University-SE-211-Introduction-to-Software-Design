@@ -1,28 +1,88 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" version="29.3.6">
-  <diagram name="Page-1" id="MNbow-SsKmtA9UEPbGVP">
-    <mxGraphModel dx="1678" dy="942" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+  <diagram name="Page-1" id="g-OHgPWqP2GRo7UoVGHR">
+    <mxGraphModel dx="1501" dy="788" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="-u29BQ0GjB6tcBhsXgwu-5" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CsvIo&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;u&gt;+ DEFAULT_DELIMITER : char&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;u&gt;+ DEFAULT_QUOTE_CHAR : char&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# delimiter : char&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# quoteChar : char&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ CsvIo(delimiter : char, quoteChar : char) : void&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ setDelimiter(delimiter : char) : void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setQuoteChar(quoteChar : char) : void&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ getDelimiter() : char&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ getQuoteChar() : char&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="210" width="340" x="255" y="170" as="geometry" />
+        <mxCell id="MlAeXzg-cey-aNR3si-0-1" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CsvIo&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;u&gt;+ DEFAULT_DELIMITER : char&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;u&gt;+ DEFAULT_QUOTE_CHAR : char&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# delimiter : char&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# quoteChar : char&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ CsvIo(delimiter : char, quoteChar : char) : void&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ setDelimiter(delimiter : char) : void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setQuoteChar(quoteChar : char) : void&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ getDelimiter() : char&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ getQuoteChar() : char&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="340" x="765" y="140" as="geometry" />
         </mxCell>
-        <mxCell id="-u29BQ0GjB6tcBhsXgwu-6" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CsvReader&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;hr&gt;" vertex="1">
-          <mxGeometry height="130" width="220" x="150" y="490" as="geometry" />
+        <mxCell id="MlAeXzg-cey-aNR3si-0-2" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CsvReader&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;- reader : Reader&lt;div&gt;-strict : boolean&lt;br&gt;&lt;hr&gt;+ CsvReader(reader : Reader, strict : Strict) : void&lt;div&gt;+ readRecord() : List&amp;lt;String&amp;gt;&lt;/div&gt;&lt;div&gt;+ readRecords() : List&amp;lt;List&amp;lt;String&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ setStrict(strict : boolean) : void&lt;/div&gt;&lt;div&gt;+ close() :void&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="370" x="420" y="490" as="geometry" />
         </mxCell>
-        <mxCell id="-u29BQ0GjB6tcBhsXgwu-7" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CsvWriter&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;hr&gt;" vertex="1">
-          <mxGeometry height="130" width="220" x="510" y="500" as="geometry" />
+        <mxCell id="MlAeXzg-cey-aNR3si-0-3" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CsvWriter&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;- quoting : QuotingOption&lt;div&gt;- escapeChar : char&lt;/div&gt;&lt;div&gt;- writer : Writer&lt;br&gt;&lt;hr&gt;+ CsvWriter(writer : Writer) : void&lt;/div&gt;&lt;div&gt;+ writeRecord(record : List&amp;lt;String&amp;gt;) : Void&lt;/div&gt;&lt;div&gt;+ writeRecords(records : List&amp;lt;List&amp;lt;String&amp;gt;&amp;gt;) : void&lt;/div&gt;&lt;div&gt;+ setEscapeChar(escapeChar : char) : void&lt;/div&gt;&lt;div&gt;+ setQuoting(quoting : QuotingOption) : void&lt;/div&gt;&lt;div&gt;+ close() : void&lt;/div&gt;&lt;div&gt;+ flush() : void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="195" width="290" x="1130" y="466.88" as="geometry" />
         </mxCell>
-        <mxCell id="-u29BQ0GjB6tcBhsXgwu-8" edge="1" parent="1" source="-u29BQ0GjB6tcBhsXgwu-6" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;fontSize=12;curved=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="-u29BQ0GjB6tcBhsXgwu-5" value="">
+        <mxCell id="MlAeXzg-cey-aNR3si-0-4" edge="1" parent="1" source="MlAeXzg-cey-aNR3si-0-2" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;fontSize=12;curved=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="MlAeXzg-cey-aNR3si-0-1" value="">
           <mxGeometry relative="1" width="160" as="geometry">
-            <mxPoint x="510" y="460" as="sourcePoint" />
-            <mxPoint x="670" y="460" as="targetPoint" />
+            <mxPoint x="1105" y="480" as="sourcePoint" />
+            <mxPoint x="1265" y="480" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="-u29BQ0GjB6tcBhsXgwu-9" edge="1" parent="1" source="-u29BQ0GjB6tcBhsXgwu-7" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;fontSize=12;curved=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="-u29BQ0GjB6tcBhsXgwu-5" value="">
+        <mxCell id="MlAeXzg-cey-aNR3si-0-5" edge="1" parent="1" source="MlAeXzg-cey-aNR3si-0-3" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;fontSize=12;curved=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="MlAeXzg-cey-aNR3si-0-1" value="">
           <mxGeometry relative="1" width="160" as="geometry">
-            <mxPoint x="450" y="580" as="sourcePoint" />
-            <mxPoint x="640" y="460" as="targetPoint" />
+            <mxPoint x="1045" y="600" as="sourcePoint" />
+            <mxPoint x="1235" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MlAeXzg-cey-aNR3si-0-6" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Enumeration&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;QuotingOption&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;text-align: center; margin: 0px 0px 0px 4px;&quot;&gt;QUOTE_ALL&lt;/p&gt;&lt;p style=&quot;text-align: center; margin: 0px 0px 0px 4px;&quot;&gt;QUOTE_MINIMAL&lt;/p&gt;&lt;p style=&quot;text-align: center; margin: 0px 0px 0px 4px;&quot;&gt;QUOTE_NONE&lt;/p&gt;&lt;p style=&quot;text-align: center; margin: 0px 0px 0px 4px;&quot;&gt;QUOTE_NONEMPTY&lt;/p&gt;&lt;p style=&quot;text-align: center; margin: 0px 0px 0px 4px;&quot;&gt;QUOTE_NONNUMERIC&lt;/p&gt;&lt;p style=&quot;text-align: center; margin: 0px 0px 0px 4px;&quot;&gt;QUOTE_STRINGS&lt;/p&gt;" vertex="1">
+          <mxGeometry height="140" width="150" x="1480" y="494.37" as="geometry" />
+        </mxCell>
+        <mxCell id="MlAeXzg-cey-aNR3si-0-8" edge="1" parent="1" source="MlAeXzg-cey-aNR3si-0-6" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="MlAeXzg-cey-aNR3si-0-3" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="905" y="380" as="sourcePoint" />
+            <mxPoint x="1065" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MlAeXzg-cey-aNR3si-0-9" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Reader&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="40" width="190" x="510" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="MlAeXzg-cey-aNR3si-0-10" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Writer&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="40" width="190" x="1180" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="MlAeXzg-cey-aNR3si-0-12" edge="1" parent="1" source="MlAeXzg-cey-aNR3si-0-9" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="MlAeXzg-cey-aNR3si-0-2" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="945" y="530" as="sourcePoint" />
+            <mxPoint x="1105" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MlAeXzg-cey-aNR3si-0-13" edge="1" parent="1" source="MlAeXzg-cey-aNR3si-0-10" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="MlAeXzg-cey-aNR3si-0-3" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="945" y="530" as="sourcePoint" />
+            <mxPoint x="1105" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MlAeXzg-cey-aNR3si-0-14" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;AutoCloseable&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ close() : void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="68.75" width="190" x="840" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="MlAeXzg-cey-aNR3si-0-16" edge="1" parent="1" source="MlAeXzg-cey-aNR3si-0-3" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;fontSize=12;curved=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="MlAeXzg-cey-aNR3si-0-14" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="1495" y="605" as="sourcePoint" />
+            <mxPoint x="1240" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MlAeXzg-cey-aNR3si-0-17" edge="1" parent="1" source="MlAeXzg-cey-aNR3si-0-2" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;fontSize=12;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="MlAeXzg-cey-aNR3si-0-14" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="1290" y="580" as="sourcePoint" />
+            <mxPoint x="1190" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MlAeXzg-cey-aNR3si-0-18" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Flushable&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ flush() : void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="70" width="190" x="840" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="MlAeXzg-cey-aNR3si-0-19" edge="1" parent="1" source="MlAeXzg-cey-aNR3si-0-3" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;fontSize=12;curved=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="MlAeXzg-cey-aNR3si-0-18" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="1180" y="590" as="sourcePoint" />
+            <mxPoint x="1080" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MlAeXzg-cey-aNR3si-0-20" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Enumeration&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;ReaderState&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;text-align: center; margin: 0px 0px 0px 4px;&quot;&gt;FIELD_START&lt;/p&gt;&lt;p style=&quot;text-align: center; margin: 0px 0px 0px 4px;&quot;&gt;IN_UNQUOTE&lt;/p&gt;&lt;p style=&quot;text-align: center; margin: 0px 0px 0px 4px;&quot;&gt;IN_QUOTE&lt;/p&gt;&lt;p style=&quot;text-align: center; margin: 0px 0px 0px 4px;&quot;&gt;IN_QUOTE_AFTER&lt;/p&gt;" vertex="1">
+          <mxGeometry height="108.75" width="120" x="240" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="MlAeXzg-cey-aNR3si-0-22" edge="1" parent="1" source="MlAeXzg-cey-aNR3si-0-20" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="MlAeXzg-cey-aNR3si-0-2" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="710" y="570" as="sourcePoint" />
+            <mxPoint x="870" y="570" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
