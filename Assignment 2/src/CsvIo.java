@@ -1,6 +1,6 @@
 public abstract class CsvIo {
-    static char DEFAULT_DELIMITER = ',';
-    static char DEFAULT_QUOTE_CHAR = '"';
+    public static char DEFAULT_DELIMITER = ',';
+    public static char DEFAULT_QUOTE_CHAR = '"';
 
     protected char delimiter;
     protected char quoteChar;

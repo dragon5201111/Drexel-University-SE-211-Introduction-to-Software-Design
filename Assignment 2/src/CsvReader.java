@@ -150,17 +150,6 @@ public class CsvReader extends CsvIo implements AutoCloseable {
         this.strict = strict;
     }
 
-    public static void main(String[] args) {
-        try (CsvReader csvReader = new CsvReader(new FileReader(".\\Assignment 2\\csv\\test.csv"))){
-            csvReader.setStrict(false);
-            for  (List<String> record : csvReader.readRecords()){
-                System.out.println(record);
-            }
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
-
     @Override
     public void close() throws Exception {
         this.reader.close();
