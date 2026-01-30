@@ -124,12 +124,13 @@ public class CsvReader extends CsvIo implements AutoCloseable {
         }
     }
 
-    public void setStrict(boolean strict){
+    public CsvReader setStrict(boolean strict){
         this.strict = strict;
+        return this;
     }
 
     public static void main(String[] args) {
-        try (CsvReader csvReader = new CsvReader(new FileReader(".\\Assignment 2\\csv\\test.csv"))){
+        try (CsvReader csvReader = new CsvReader(new FileReader(".\\Assignment 2\\csv\\people-100.csv"))){
             for  (List<String> record : csvReader.readRecords()){
                 System.out.println(record);
             }
