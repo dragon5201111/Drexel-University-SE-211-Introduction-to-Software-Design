@@ -5,7 +5,6 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
-// Reader is compliant with RFC 4180
 public class CsvReader extends CsvIo implements AutoCloseable {
     private final int HEADER_UNSET_SIZE = -1;
     private enum ReaderState{
@@ -46,6 +45,15 @@ public class CsvReader extends CsvIo implements AutoCloseable {
             return List.of();
         }
 
+        if (this.strict){
+            return this.parseFieldsStrict(nextLine);
+        }
+
+        return this.parseFieldsUnstrict(nextLine);
+    }
+
+    // Parses fields compliant to RFC 4180
+    private List<String> parseFieldsStrict(String nextLine) throws IOException {
         ReaderState currentState = ReaderState.FIELD_START;
         List<String> fields = new ArrayList<>();
         StringBuilder stringBuilder = new StringBuilder();
@@ -69,7 +77,7 @@ public class CsvReader extends CsvIo implements AutoCloseable {
                         addField(fields, stringBuilder);
                         currentState = ReaderState.FIELD_START;
                     }else if (currentChar == this.quoteChar){
-                        throwCsvException("Fields with quotes cannot begin without a quote.");
+                        throw new IOException("Fields with quotes cannot begin without a quote.");
                     }else{
                         stringBuilder.append(currentChar);
                     }
@@ -79,7 +87,7 @@ public class CsvReader extends CsvIo implements AutoCloseable {
                         currentState = ReaderState.IN_QUOTE_AFTER;
                     }else{
                         if (i + 1 >= lineLength){
-                            throwCsvException("Unterminated quote.");
+                            throw new IOException("Unterminated quote.");
                         }
 
                         stringBuilder.append(currentChar);
@@ -93,18 +101,38 @@ public class CsvReader extends CsvIo implements AutoCloseable {
                         stringBuilder.append(currentChar);
                         currentState = ReaderState.IN_QUOTE;
                     }else{
-                        throwCsvException("Quoted fields may only be followed by a delimiter.");
+                        throw new IOException("Quoted fields may only be followed by a delimiter.");
                     }
                     break;
             }
         }
         fields.add(stringBuilder.toString());
+
         int fieldsSize = fields.size();
         if (this.headerLength != HEADER_UNSET_SIZE && fieldsSize != this.headerLength){
-            throwCsvException("Invalid number of fields in this record. Must match header size.");
+            throw new IOException("Invalid number of fields in this record. Must match header size.");
         }else{
             this.headerLength = fieldsSize;
         }
+        return fields;
+    }
+
+    // Parses fields by ignoring CRFL, quotes, and only paying attention to delimiters
+    private List<String> parseFieldsUnstrict(String nextLine) {
+        List<String> fields = new ArrayList<>();
+        StringBuilder stringBuilder = new StringBuilder();
+
+        int lineLength = nextLine.length();
+        for (int i = 0; i < lineLength; i++) {
+            char currentChar = nextLine.charAt(i);
+            if (currentChar == this.delimiter){
+                addField(fields, stringBuilder);
+            }else{
+                stringBuilder.append(currentChar);
+            }
+        }
+
+        fields.add(stringBuilder.toString());
         return fields;
     }
 
@@ -118,19 +146,13 @@ public class CsvReader extends CsvIo implements AutoCloseable {
         stringBuilder.setLength(0);
     }
 
-    private void throwCsvException(String message) throws IOException {
-        if (this.strict){
-            throw new IOException(message);
-        }
-    }
-
-    public CsvReader setStrict(boolean strict){
+    public void setStrict(boolean strict){
         this.strict = strict;
-        return this;
     }
 
     public static void main(String[] args) {
-        try (CsvReader csvReader = new CsvReader(new FileReader(".\\Assignment 2\\csv\\people-100.csv"))){
+        try (CsvReader csvReader = new CsvReader(new FileReader(".\\Assignment 2\\csv\\test.csv"))){
+            csvReader.setStrict(false);
             for  (List<String> record : csvReader.readRecords()){
                 System.out.println(record);
             }

@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 public class CsvWriter extends CsvIo implements AutoCloseable, Flushable {
     public static char DEFAULT_ESCAPE_CHAR = '\0';
 
-    private char escapeChar;
     private QuotingOption quoting;
+    private char escapeChar;
 
     private final Writer writer;
     private final Map<String, Pattern> patternCache = new HashMap<>();
@@ -18,8 +18,8 @@ public class CsvWriter extends CsvIo implements AutoCloseable, Flushable {
     public CsvWriter(Writer writer) {
         super();
         this.writer = writer;
-        this.quoting = QuotingOption.QUOTE_MINIMAL;
         this.escapeChar = DEFAULT_ESCAPE_CHAR;
+        this.quoting = QuotingOption.QUOTE_MINIMAL;
     }
 
     public void writeRecords(List<List<String>> records) throws IOException {
@@ -97,14 +97,12 @@ public class CsvWriter extends CsvIo implements AutoCloseable, Flushable {
                         Pattern.compile("[" +  Pattern.quote(String.valueOf(this.delimiter)) +  Pattern.quote(String.valueOf(this.quoteChar)) +  "\n\r]"));
     }
 
-    public CsvWriter setEscapeChar(char escapeChar) {
-        this.escapeChar = escapeChar;
-        return this;
+    public void setQuoting(QuotingOption quoting){
+        this.quoting = quoting;
     }
 
-    public CsvWriter setQuoting(QuotingOption quoting) {
-        this.quoting = quoting;
-        return this;
+    public void setEscapeChar(char escapeChar) {
+        this.escapeChar = escapeChar;
     }
 
     @Override
