@@ -1,37 +1,30 @@
 public abstract class CsvIo {
     static char DEFAULT_DELIMITER = ',';
     static char DEFAULT_QUOTE_CHAR = '"';
-    static char DEFAULT_ESCAPE_CHAR = '\0';
 
     protected QuotingOption quoting;
     protected char delimiter;
     protected char quoteChar;
-    protected char escapeChar;
 
-    public CsvIo(QuotingOption quoting, char delimiter, char quoteChar, char escapeChar) {
-        this.quoting = quoting;
+    public CsvIo(char delimiter, char quoteChar) {
         this.delimiter = delimiter;
         this.quoteChar = quoteChar;
-        this.escapeChar = escapeChar;
     }
 
-    public void setQuoting(QuotingOption quoting) {
-        this.quoting = quoting;
-    }
-
-    public void setDelimiter(char delimiter) {
+    public CsvIo setDelimiter(char delimiter) {
         this.delimiter = delimiter;
+        return this;
     }
 
-    public void setQuoteChar(char quoteChar) {
+    public CsvIo setQuoteChar(char quoteChar) {
         this.quoteChar = quoteChar;
+        return this;
     }
 
-    public void setEscapeChar(char escapeChar) {
-        this.escapeChar = escapeChar;
-    }
+    public char getDelimiter() { return delimiter; }
+    public char getQuoteChar() { return quoteChar; }
 
     public CsvIo() {
-        this(QuotingOption.QUOTE_MINIMAL, DEFAULT_DELIMITER, DEFAULT_QUOTE_CHAR, DEFAULT_ESCAPE_CHAR);
+        this(CsvIo.DEFAULT_DELIMITER, CsvIo.DEFAULT_QUOTE_CHAR);
     }
 }
