@@ -1,3 +1,5 @@
+package lib;
+
 public enum QuotingOption {
     QUOTE_ALL,
     QUOTE_MINIMAL,
