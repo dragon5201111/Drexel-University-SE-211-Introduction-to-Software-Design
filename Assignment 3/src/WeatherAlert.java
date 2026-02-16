@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class WeatherAlert implements Subject{
@@ -6,27 +7,28 @@ public class WeatherAlert implements Subject{
 
     public WeatherAlert(WeatherDecisionEngine weatherDecisionEngine) {
         this.weatherDecisionEngine = weatherDecisionEngine;
+        this.observers = new ArrayList<>();
     }
 
     public void refresh(){
-        if (weatherDecisionEngine.cancellationInEffect()){
-            notifyObservers("University classes are cancelled due to " + weatherDecisionEngine.cancellationReason() + ".");
+        if (this.weatherDecisionEngine.cancellationInEffect()){
+            notifyObservers("University classes are cancelled due to " + this.weatherDecisionEngine.cancellationReason() + ".");
         }
     }
 
     @Override
     public void registerObserver(Observer observer) {
-        observers.add(observer);
+        this.observers.add(observer);
     }
 
     @Override
     public void removeObserver(Observer observer) {
-        observers.remove(observer);
+        this.observers.remove(observer);
     }
 
     @Override
     public void notifyObservers(String message) {
-        for (Observer observer : observers) {
+        for (Observer observer : this.observers) {
             observer.update(message);
         }
     }

@@ -1,8 +1,17 @@
 public abstract class Recipient implements Observer {
-    private final NotificationStrategy notificationStrategy;
+    private NotificationStrategy notificationStrategy;
 
     public Recipient(NotificationStrategy notificationStrategy) {
         this.notificationStrategy = notificationStrategy;
+    }
+
+    Recipient setNotificationStrategy(NotificationStrategy notificationStrategy) {
+        this.notificationStrategy = notificationStrategy;
+        return this;
+    }
+
+    NotificationStrategy getNotificationStrategy() {
+        return this.notificationStrategy;
     }
 
     @Override

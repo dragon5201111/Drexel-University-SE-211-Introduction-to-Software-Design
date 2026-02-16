@@ -1,8 +1,10 @@
-public class UniversityPersonnel extends Recipient {
+public abstract class UniversityPersonnel extends Recipient {
     private String firstName;
     private String lastName;
     private String address;
     private String email;
+    private String phoneNumber;
+
     private int age;
     private int idNumber;
 
@@ -30,6 +32,11 @@ public class UniversityPersonnel extends Recipient {
         return this;
     }
 
+    UniversityPersonnel setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        return this;
+    }
+
     UniversityPersonnel setAge(int age) {
         this.age = age;
         return this;
@@ -41,26 +48,30 @@ public class UniversityPersonnel extends Recipient {
     }
 
     String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     String getAddress() {
-        return address;
+        return this.address;
     }
 
     String getEmail() {
-        return email;
+        return this.email;
+    }
+
+    String getPhoneNumber() {
+        return this.phoneNumber;
     }
 
     int getAge() {
-        return age;
+        return this.age;
     }
 
     int getIdNumber() {
-        return idNumber;
+        return this.idNumber;
     }
 }
