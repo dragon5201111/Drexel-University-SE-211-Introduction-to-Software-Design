@@ -1,12 +1,11 @@
-public class EmailNotificationStrategy implements NotificationStrategy {
-    private final String email;
+public class EmailNotificationStrategy extends NotificationStrategy {
 
-    public EmailNotificationStrategy(String email) {
-        this.email = email;
+    public EmailNotificationStrategy(String destination) {
+        super(destination);
     }
 
     @Override
     public void sendNotification(String message) {
-        System.out.println("Sending email to " + this.email + ": " + message);
+        System.out.println("Sending email to " + this.destination + ": " + message);
     }
 }

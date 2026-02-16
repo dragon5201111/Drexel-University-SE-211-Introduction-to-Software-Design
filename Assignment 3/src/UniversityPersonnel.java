@@ -1,4 +1,4 @@
-public abstract class UniversityPersonnel extends Recipient {
+public abstract class UniversityPersonnel extends Notifiable {
     private String firstName;
     private String lastName;
     private String address;
@@ -7,10 +7,6 @@ public abstract class UniversityPersonnel extends Recipient {
 
     private int age;
     private int idNumber;
-
-    public UniversityPersonnel(NotificationStrategy notificationStrategy) {
-        super(notificationStrategy);
-    }
 
     UniversityPersonnel setFirstName(String firstName) {
         this.firstName = firstName;

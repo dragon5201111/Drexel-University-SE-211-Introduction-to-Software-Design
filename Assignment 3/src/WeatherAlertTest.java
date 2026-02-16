@@ -1,15 +1,21 @@
 public class WeatherAlertTest {
     public static void main(String[] args) {
-        // Example usage of WeatherAlert class
-
-        Student studentOne = new Student(null);
+        // Example usage of Weather Alert Notification system
+        Student studentOne = new Student();
         studentOne
                 .setEmail("tbr53@drexel.edu")
                 .setFirstName("Tom")
                 .setLastName("Brown");
         studentOne.setNotificationStrategy(new EmailNotificationStrategy(studentOne.getEmail()));
 
-        Faculty facultyOne = new Faculty(null);
+        Student studentTwo = new Student();
+        studentTwo
+                .setFirstName("Hailey")
+                .setLastName("Bar")
+                .setPhoneNumber("254-123-9583")
+                .setNotificationStrategy(new VoiceCallNotificationStrategy(studentTwo.getPhoneNumber()));
+
+        Faculty facultyOne = new Faculty();
         facultyOne
                 .setFirstName("John")
                 .setLastName("Doe")
@@ -18,6 +24,7 @@ public class WeatherAlertTest {
 
         WeatherAlert weatherAlert = new WeatherAlert(new WeatherDecisionEngine());
         weatherAlert.registerObserver(studentOne);
+        weatherAlert.registerObserver(studentTwo);
         weatherAlert.registerObserver(facultyOne);
         weatherAlert.refresh();
     }
