@@ -1,3 +1,3 @@
-public class Student extends UniversityPersonnel{
+public class Student extends UniversityPersonnel {
 
 }

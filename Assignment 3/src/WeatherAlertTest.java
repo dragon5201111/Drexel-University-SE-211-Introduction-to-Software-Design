@@ -21,11 +21,25 @@ public class WeatherAlertTest {
                 .setLastName("Doe")
                 .setPhoneNumber("267-444-1122")
                 .setNotificationStrategy(new SMSNotificationStrategy(facultyOne.getPhoneNumber()));
+        Faculty facultyTwo = new Faculty();
+        facultyTwo
+                .setFirstName("Jane")
+                .setLastName("Woe")
+                .setPhoneNumber("267-232-1142")
+                .setEmail("jfw256@faculty.drexel.edu")
+                .setNotificationStrategy(new EmailNotificationStrategy(facultyTwo.getEmail()));
 
         WeatherAlert weatherAlert = new WeatherAlert(new WeatherDecisionEngine());
+
         weatherAlert.registerObserver(studentOne);
         weatherAlert.registerObserver(studentTwo);
         weatherAlert.registerObserver(facultyOne);
+        System.out.println("Checking for any weather alerts and notifying subscribers.");
+        weatherAlert.refresh();
+
+        weatherAlert.registerObserver(facultyTwo);
+        weatherAlert.removeObserver(studentOne);
+        System.out.println("Checking for any weather alerts and notifying subscribers.");
         weatherAlert.refresh();
     }
 }
