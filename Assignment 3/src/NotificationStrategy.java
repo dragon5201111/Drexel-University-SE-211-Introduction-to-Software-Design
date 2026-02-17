@@ -5,5 +5,5 @@ public abstract class NotificationStrategy {
         this.destination = destination;
     }
 
-    abstract void sendNotification(String message);
+    abstract void sendNotification(Message message);
 }

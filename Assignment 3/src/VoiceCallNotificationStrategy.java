@@ -4,7 +4,7 @@ public class VoiceCallNotificationStrategy extends NotificationStrategy {
     }
 
     @Override
-    void sendNotification(String message) {
-        System.out.println("Sending voice call message to " + this.destination + ": " + message);
+    void sendNotification(Message message) {
+        System.out.println("Sending voice call message to " + this.destination + ": " + message.getContent());
     }
 }

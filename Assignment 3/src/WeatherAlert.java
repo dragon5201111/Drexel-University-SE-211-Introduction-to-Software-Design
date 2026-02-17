@@ -12,12 +12,12 @@ public class WeatherAlert implements Subject{
 
     // A system that uses WeatherAlert would call refresh when desired to interface with WeatherDecisionEngine
     // Refresh interfaces with WeatherDecisionEngine and notifies observers of any cancellations
+    // Simulates interaction with weather WeatherDecisionEngine
     public void refresh(){
         if (this.weatherDecisionEngine.cancellationInEffect()){
-            notifyObservers("University classes are cancelled due to " + this.weatherDecisionEngine.cancellationReason() + ".");
+            notifyObservers(new AlertMessageDecorator(new BaseMessage("University classes are cancelled due to " + this.weatherDecisionEngine.cancellationReason() + ".")));
         }else{
-            // Should do nothing here, just for testing
-            notifyObservers("University operations still in effect.");
+            notifyObservers(new InfoMessageDecorator(new BaseMessage("University classes still in affect.")));
         }
     }
 
@@ -32,7 +32,7 @@ public class WeatherAlert implements Subject{
     }
 
     @Override
-    public void notifyObservers(String message) {
+    public void notifyObservers(Message message) {
         for (Observer observer : this.observers) {
             observer.update(message);
         }

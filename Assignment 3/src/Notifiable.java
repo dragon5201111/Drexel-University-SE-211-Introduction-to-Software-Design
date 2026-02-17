@@ -11,7 +11,7 @@ public abstract class Notifiable implements Observer {
     }
 
     @Override
-    public void update(String message) {
+    public void update(Message message) {
         this.notificationStrategy.sendNotification(message);
     }
 }
