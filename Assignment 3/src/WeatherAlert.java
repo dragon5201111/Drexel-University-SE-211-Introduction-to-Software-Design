@@ -10,9 +10,14 @@ public class WeatherAlert implements Subject{
         this.observers = new ArrayList<>();
     }
 
+    // A system that uses WeatherAlert would call refresh when desired to interface with WeatherDecisionEngine
+    // Refresh interfaces with WeatherDecisionEngine and notifies observers of any cancellations
     public void refresh(){
         if (this.weatherDecisionEngine.cancellationInEffect()){
             notifyObservers("University classes are cancelled due to " + this.weatherDecisionEngine.cancellationReason() + ".");
+        }else{
+            // Should do nothing here, just for testing
+            notifyObservers("University operations still in effect.");
         }
     }
 

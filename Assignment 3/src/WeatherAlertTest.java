@@ -1,27 +1,27 @@
 public class WeatherAlertTest {
     public static void main(String[] args) {
         // Example usage of Weather Alert Notification system
-        Student studentOne = new Student();
+        UniversityStudent studentOne = new UniversityStudent();
         studentOne
                 .setEmail("tbr53@drexel.edu")
                 .setFirstName("Tom")
                 .setLastName("Brown");
         studentOne.setNotificationStrategy(new EmailNotificationStrategy(studentOne.getEmail()));
 
-        Student studentTwo = new Student();
+        UniversityStudent studentTwo = new UniversityStudent();
         studentTwo
                 .setFirstName("Hailey")
                 .setLastName("Bar")
                 .setPhoneNumber("254-123-9583")
                 .setNotificationStrategy(new VoiceCallNotificationStrategy(studentTwo.getPhoneNumber()));
 
-        Faculty facultyOne = new Faculty();
+        UniversityFaculty facultyOne = new UniversityFaculty();
         facultyOne
                 .setFirstName("John")
                 .setLastName("Doe")
                 .setPhoneNumber("267-444-1122")
                 .setNotificationStrategy(new SMSNotificationStrategy(facultyOne.getPhoneNumber()));
-        Faculty facultyTwo = new Faculty();
+        UniversityFaculty facultyTwo = new UniversityFaculty();
         facultyTwo
                 .setFirstName("Jane")
                 .setLastName("Woe")
@@ -29,16 +29,27 @@ public class WeatherAlertTest {
                 .setEmail("jfw256@faculty.drexel.edu")
                 .setNotificationStrategy(new EmailNotificationStrategy(facultyTwo.getEmail()));
 
+        UniversityStaff staffOne = new UniversityStaff();
+        staffOne
+                .setFirstName("Bob")
+                .setLastName("Way")
+                .setPhoneNumber("254-123-9583")
+                .setNotificationStrategy(new SMSNotificationStrategy(staffOne.getPhoneNumber()));
+
         WeatherAlert weatherAlert = new WeatherAlert(new WeatherDecisionEngine());
 
         weatherAlert.registerObserver(studentOne);
         weatherAlert.registerObserver(studentTwo);
         weatherAlert.registerObserver(facultyOne);
+        weatherAlert.registerObserver(staffOne);
+
         System.out.println("Checking for any weather alerts and notifying subscribers.");
         weatherAlert.refresh();
+        System.out.println();
 
         weatherAlert.registerObserver(facultyTwo);
         weatherAlert.removeObserver(studentOne);
+
         System.out.println("Checking for any weather alerts and notifying subscribers.");
         weatherAlert.refresh();
     }

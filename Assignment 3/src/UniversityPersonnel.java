@@ -7,6 +7,7 @@ public abstract class UniversityPersonnel extends Notifiable {
 
     private int age;
     private int idNumber;
+    private int wage; // Wage isn't cohesive but, accessor methods can be overridden in desired subclasses to throw an error
 
     UniversityPersonnel setFirstName(String firstName) {
         this.firstName = firstName;
@@ -43,6 +44,11 @@ public abstract class UniversityPersonnel extends Notifiable {
         return this;
     }
 
+    UniversityPersonnel setWage(int wage) {
+        this.wage = wage;
+        return this;
+    }
+
     String getFirstName() {
         return this.firstName;
     }
@@ -69,5 +75,9 @@ public abstract class UniversityPersonnel extends Notifiable {
 
     int getIdNumber() {
         return this.idNumber;
+    }
+
+    int getWage() {
+        return this.wage;
     }
 }

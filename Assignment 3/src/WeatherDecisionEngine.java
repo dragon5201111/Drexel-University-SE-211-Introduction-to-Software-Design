@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+// Interfaces (simulates) with several weather-related data sources, fuses the information, and automatically
+// decides whether class cancellations are in effect.
 public class WeatherDecisionEngine {
 
     // Simulate whether cancellation is in effect due to weather
