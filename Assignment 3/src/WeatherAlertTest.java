@@ -38,6 +38,12 @@ public class WeatherAlertTest {
                 .setLastName("Way")
                 .setPhoneNumber("254-123-9583")
                 .setNotificationStrategy(new SMSNotificationStrategy(staffOne.getPhoneNumber()));
+        UniversityStaff staffTwo = new UniversityStaff();
+        staffTwo
+                .setEmail("nbe223@staff.drexel.edu")
+                .setFirstName("Nessy")
+                .setLastName("Eobar")
+                .setNotificationStrategy(new EmailNotificationStrategy(staffTwo.getEmail()));
 
         WeatherAlert weatherAlert = new WeatherAlert(new WeatherDecisionEngine());
 
@@ -45,6 +51,7 @@ public class WeatherAlertTest {
         weatherAlert.registerObserver(studentTwo);
         weatherAlert.registerObserver(facultyOne);
         weatherAlert.registerObserver(staffOne);
+        weatherAlert.registerObserver(staffTwo);
 
         System.out.println("Checking for any weather alerts and notifying subscribers.");
         weatherAlert.refresh();
