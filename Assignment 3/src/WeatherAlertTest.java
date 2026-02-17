@@ -1,6 +1,9 @@
 public class WeatherAlertTest {
     public static void main(String[] args) {
         // Example usage of Weather Alert Notification system
+        System.out.println("Subscribing Students, Faculty, and Staff to the Weather Alert System.");
+        System.out.println();
+
         UniversityStudent studentOne = new UniversityStudent();
         studentOne
                 .setEmail("tbr53@drexel.edu")
@@ -47,8 +50,11 @@ public class WeatherAlertTest {
         weatherAlert.refresh();
         System.out.println();
 
+        System.out.println("Adding Faculty: " + facultyTwo.getFirstName() + " to the Weather Alert System.");
         weatherAlert.registerObserver(facultyTwo);
+        System.out.println("Removing Student: " + studentOne.getFirstName() +  " from the Weather Alert System.");
         weatherAlert.removeObserver(studentOne);
+        System.out.println();
 
         System.out.println("Checking for any weather alerts and notifying subscribers.");
         weatherAlert.refresh();
