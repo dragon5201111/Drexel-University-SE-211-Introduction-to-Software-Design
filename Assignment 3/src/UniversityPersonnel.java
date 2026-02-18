@@ -80,4 +80,9 @@ public abstract class UniversityPersonnel extends Notifiable {
     public int getWage() {
         return this.wage;
     }
+
+    @Override
+    public String toString() {
+        return this.firstName + " " + this.lastName + ", " + this.email + ", " + this.idNumber;
+    }
 }
