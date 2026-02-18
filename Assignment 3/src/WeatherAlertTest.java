@@ -1,8 +1,14 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class WeatherAlertTest {
     public static void main(String[] args) {
         // Example usage of Weather Alert Notification system
-        System.out.println("Subscribing Students, Faculty, and Staff to the Weather Alert System.");
+        System.out.println("Starting Weather Alert System.");
         System.out.println();
+
+        List<UniversityPersonnel> weatherAlertSubscribers = new ArrayList<>();
 
         UniversityStudent studentOne = new UniversityStudent();
         studentOne
@@ -14,6 +20,7 @@ public class WeatherAlertTest {
         UniversityStudent studentTwo = new UniversityStudent();
         studentTwo
                 .setFirstName("Hailey")
+                .setEmail("htb213@drexel.edu")
                 .setLastName("Bar")
                 .setPhoneNumber("254-123-9583")
                 .setNotificationStrategy(new VoiceCallNotificationStrategy(studentTwo.getPhoneNumber()));
@@ -23,6 +30,7 @@ public class WeatherAlertTest {
                 .setFirstName("John")
                 .setLastName("Doe")
                 .setPhoneNumber("267-444-1122")
+                .setEmail("jnd993@faculty.drexel.edu")
                 .setNotificationStrategy(new SMSNotificationStrategy(facultyOne.getPhoneNumber()));
         UniversityFaculty facultyTwo = new UniversityFaculty();
         facultyTwo
@@ -37,6 +45,7 @@ public class WeatherAlertTest {
                 .setFirstName("Bob")
                 .setLastName("Way")
                 .setPhoneNumber("254-123-9583")
+                .setEmail("byw664@staff.drexel.edu")
                 .setNotificationStrategy(new SMSNotificationStrategy(staffOne.getPhoneNumber()));
         UniversityStaff staffTwo = new UniversityStaff();
         staffTwo
@@ -45,25 +54,45 @@ public class WeatherAlertTest {
                 .setLastName("Eobar")
                 .setNotificationStrategy(new EmailNotificationStrategy(staffTwo.getEmail()));
 
+        weatherAlertSubscribers.add(studentOne);
+        weatherAlertSubscribers.add(studentTwo);
+        weatherAlertSubscribers.add(facultyOne);
+        weatherAlertSubscribers.add(facultyTwo);
+        weatherAlertSubscribers.add(staffOne);
+        weatherAlertSubscribers.add(staffTwo);
+
         WeatherAlert weatherAlert = new WeatherAlert(new WeatherDecisionEngine());
+        System.out.println("Adding subscribers to Weather Alert System.");
 
-        weatherAlert.registerObserver(studentOne);
-        weatherAlert.registerObserver(studentTwo);
-        weatherAlert.registerObserver(facultyOne);
-        weatherAlert.registerObserver(staffOne);
-        weatherAlert.registerObserver(staffTwo);
+        for (UniversityPersonnel person : weatherAlertSubscribers) {
+            weatherAlert.registerObserver(person);
+        }
 
-        System.out.println("Checking for any weather alerts and notifying subscribers.");
-        weatherAlert.refresh();
+        System.out.println("Subscribers of the Weather Alert System:");
+        for (UniversityPersonnel subscriber : weatherAlertSubscribers){
+            System.out.println(subscriber.getFirstName() + ", " + subscriber.getEmail());
+        }
         System.out.println();
 
-        System.out.println("Adding Faculty: " + facultyTwo.getFirstName() + " to the Weather Alert System.");
-        weatherAlert.registerObserver(facultyTwo);
-        System.out.println("Removing Student: " + studentOne.getFirstName() +  " from the Weather Alert System.");
-        weatherAlert.removeObserver(studentOne);
-        System.out.println();
+        for (int i = 0; i < 2; i++){
+            System.out.println("Checking for any weather alerts and notifying subscribers.");
+            weatherAlert.refresh();
+            System.out.println();
+        }
 
-        System.out.println("Checking for any weather alerts and notifying subscribers.");
+        System.out.println("Removing subscribers from Weather Alert System.");
+        Random random = new Random();
+        for (int i = 0; i < 2; i++){
+            UniversityPersonnel person = weatherAlertSubscribers.get(random.nextInt(weatherAlertSubscribers.size()));
+            System.out.println("Removing " + person.getFirstName() + " from subscribers list.");
+            weatherAlertSubscribers.remove(person);
+        }
+
+        System.out.println();
+        System.out.println("Last check for any weather alerts and notifying subscribers.");
         weatherAlert.refresh();
+
+        System.out.println();
+        System.out.println("Weather Alert System closed.");
     }
 }
