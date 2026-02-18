@@ -9,5 +9,3 @@ To run the test application do the following:
 - Run `javac ./src/*.java -d ./bin`.
 - Run `jar cfe WeatherAlertTest.jar WeatherAlertTest -C bin .`.
 - Run `java -jar ./WeatherAlertTest.jar` to run the test application.
-
-## Notes
