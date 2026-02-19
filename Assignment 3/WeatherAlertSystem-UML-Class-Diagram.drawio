@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.3.6">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.4.0">
   <diagram name="Page-1" id="QIKtiFgwUSEJDqt-xxcc">
-    <mxGraphModel dx="3483" dy="936" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="5265" dy="1873" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -174,6 +174,27 @@
           <mxGeometry relative="1" width="160" as="geometry">
             <mxPoint x="165" y="930" as="sourcePoint" />
             <mxPoint x="-85" y="930" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kepzLO838Qn8zJmovUr1-1" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;NotficationFactory&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;hr&gt;&lt;i&gt;+ &lt;/i&gt;createNotification(type : String, destination : String) : NotificationStrategy" vertex="1">
+          <mxGeometry height="90" width="435" x="-1167.5" y="1430" as="geometry" />
+        </mxCell>
+        <mxCell id="kepzLO838Qn8zJmovUr1-2" edge="1" parent="1" source="kepzLO838Qn8zJmovUr1-1" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="upz--7g1KQSmU1uMSsaE-23" value="Use">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="-850" y="1390" as="sourcePoint" />
+            <mxPoint x="-690" y="1390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kepzLO838Qn8zJmovUr1-3" edge="1" parent="1" source="kepzLO838Qn8zJmovUr1-1" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="upz--7g1KQSmU1uMSsaE-25" value="Use">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="-830" y="1623" as="sourcePoint" />
+            <mxPoint x="-830" y="1420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kepzLO838Qn8zJmovUr1-4" edge="1" parent="1" source="kepzLO838Qn8zJmovUr1-1" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="upz--7g1KQSmU1uMSsaE-22" value="Use">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="-720" y="1573" as="sourcePoint" />
+            <mxPoint x="-442" y="1370" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>

@@ -9,6 +9,7 @@ public class WeatherAlertTest {
         System.out.println();
 
         List<UniversityPersonnel> weatherAlertSubscribers = new ArrayList<>();
+        NotificationFactory notificationFactory = new NotificationFactory();
 
         UniversityStudent studentOne = new UniversityStudent();
         studentOne
@@ -16,7 +17,7 @@ public class WeatherAlertTest {
                 .setFirstName("Tom")
                 .setIdNumber(53)
                 .setLastName("Brown");
-        studentOne.setNotificationStrategy(new EmailNotificationStrategy(studentOne.getEmail()));
+        studentOne.setNotificationStrategy(notificationFactory.createNotification("email", studentOne.getEmail()));
 
         UniversityStudent studentTwo = new UniversityStudent();
         studentTwo
@@ -25,7 +26,7 @@ public class WeatherAlertTest {
                 .setIdNumber(213)
                 .setLastName("Bar")
                 .setPhoneNumber("254-123-9583")
-                .setNotificationStrategy(new VoiceCallNotificationStrategy(studentTwo.getPhoneNumber()));
+                .setNotificationStrategy(notificationFactory.createNotification("voicecall", studentTwo.getPhoneNumber()));
 
         UniversityFaculty facultyOne = new UniversityFaculty();
         facultyOne
@@ -34,7 +35,7 @@ public class WeatherAlertTest {
                 .setIdNumber(993)
                 .setPhoneNumber("267-444-1122")
                 .setEmail("jnd993@faculty.drexel.edu")
-                .setNotificationStrategy(new SMSNotificationStrategy(facultyOne.getPhoneNumber()));
+                .setNotificationStrategy(notificationFactory.createNotification("sms", facultyOne.getPhoneNumber()));
         UniversityFaculty facultyTwo = new UniversityFaculty();
         facultyTwo
                 .setFirstName("Jane")
@@ -42,7 +43,7 @@ public class WeatherAlertTest {
                 .setPhoneNumber("267-232-1142")
                 .setIdNumber(256)
                 .setEmail("jfw256@faculty.drexel.edu")
-                .setNotificationStrategy(new EmailNotificationStrategy(facultyTwo.getEmail()));
+                .setNotificationStrategy(notificationFactory.createNotification("email", facultyTwo.getEmail()));
 
         UniversityStaff staffOne = new UniversityStaff();
         staffOne
@@ -51,14 +52,14 @@ public class WeatherAlertTest {
                 .setPhoneNumber("254-123-9583")
                 .setIdNumber(664)
                 .setEmail("byw664@staff.drexel.edu")
-                .setNotificationStrategy(new SMSNotificationStrategy(staffOne.getPhoneNumber()));
+                .setNotificationStrategy(notificationFactory.createNotification("voicecall", staffOne.getPhoneNumber()));
         UniversityStaff staffTwo = new UniversityStaff();
         staffTwo
                 .setEmail("nbe223@staff.drexel.edu")
                 .setFirstName("Nessy")
                 .setLastName("Eobar")
                 .setIdNumber(223)
-                .setNotificationStrategy(new EmailNotificationStrategy(staffTwo.getEmail()));
+                .setNotificationStrategy(notificationFactory.createNotification("email", staffTwo.getEmail()));
 
         weatherAlertSubscribers.add(studentOne);
         weatherAlertSubscribers.add(studentTwo);
@@ -67,11 +68,11 @@ public class WeatherAlertTest {
         weatherAlertSubscribers.add(staffOne);
         weatherAlertSubscribers.add(staffTwo);
 
-        WeatherAlert weatherAlert = new WeatherAlert(new WeatherDecisionEngine());
+        WeatherAlert weatherAlertSystem = new WeatherAlert(new WeatherDecisionEngine());
         System.out.println("Adding subscribers to Weather Alert System.");
 
         for (UniversityPersonnel person : weatherAlertSubscribers) {
-            weatherAlert.registerObserver(person);
+            weatherAlertSystem.registerObserver(person);
         }
 
         System.out.println("Subscribers of the Weather Alert System:");
@@ -82,7 +83,7 @@ public class WeatherAlertTest {
 
         for (int i = 0; i < 2; i++){
             System.out.println("Checking for any weather alerts and notifying subscribers.");
-            weatherAlert.refresh();
+            weatherAlertSystem.refresh();
             System.out.println();
         }
 
@@ -91,12 +92,12 @@ public class WeatherAlertTest {
         for (int i = 0; i < 2; i++){
             UniversityPersonnel subscriber = weatherAlertSubscribers.get(random.nextInt(weatherAlertSubscribers.size()));
             System.out.println("Removing " + subscriber);
-            weatherAlertSubscribers.remove(subscriber);
+            weatherAlertSystem.removeObserver(subscriber);
         }
 
         System.out.println();
         System.out.println("Last check for any weather alerts and notifying subscribers.");
-        weatherAlert.refresh();
+        weatherAlertSystem.refresh();
 
         System.out.println();
         System.out.println("Weather Alert System closed.");

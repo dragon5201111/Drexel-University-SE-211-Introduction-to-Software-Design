@@ -12,8 +12,3 @@ To run the test application do the following:
 - Run `javac ./src/*.java -d ./bin`.
 - Run `jar cfe WeatherAlertTest.jar WeatherAlertTest -C bin .`.
 - Run `java -jar ./WeatherAlertTest.jar` to run the test application.
-
-## Notes
-- The Weather Alert Test application instantiates a NotificationStrategy directly object into each UniversityPersonnel
-object. In practice, you would want to create a factory class to instantiate the appropriate
-NotificationStrategy. However, I have omitted it from this assignment because it is unnecessary for demonstration purposes.
